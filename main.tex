@@ -1,0 +1,185 @@
+%% LyX 2.3.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[12pt,oneside,spanish,oldfontcommands]{memoir}
+%\usepackage[authoryear]{natbib}
+\usepackage[backend=biber,style=apa]{biblatex}
+\addbibresource{referencias.bib}
+\DeclareLanguageMapping{spanish}{spanish-apa}
+\usepackage{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\setlength{\parskip}{\medskipamount}
+\setlength{\parindent}{0pt}
+\usepackage{babel}
+\usepackage{blindtext}
+\usepackage{tabu}
+\usepackage{booktabs}% for better rules in the table
+\usepackage{float}
+\usepackage{url}
+ 
+\DeclareUnicodeCharacter{0301}{*************************************}
+ 
+ 
+\usepackage{endnotes}
+\addto\shorthandsspanish{\spanishdeactivate{~<>.}}
+
+\usepackage{array}
+\usepackage{rotfloat}
+\usepackage{booktabs}
+\usepackage{textcomp}
+%\usepackage{amssymb,amsmath}
+%\usepackage[fixamsmath]{mathtools}
+%  \mathtoolsset{showmanualtags,mathic,centercolon}
+\usepackage{graphicx}
+\usepackage{esint}
+\usepackage{csquotes}
+\usepackage{hyperref} % paquete para links
+\usepackage[none]{hyphenat} % evitar cortes de palabras
+\usepackage{longtable}
+
+%%% agregados aaparte 
+
+\usepackage{dsfont}
+\usepackage{algorithm}
+\usepackage{multirow}
+%\usepackage{algorithmic}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+
+
+\algdef{SE}[VARIABLES]{Variables}{EndVariables}
+   {\algorithmicvariables}
+   {\algorithmicend\ \algorithmicvariables}
+\algnewcommand{\algorithmicvariables}{\textbf{global variables}}
+
+
+\newcommand{\Tau}{\mathrm{T}}
+\newcommand{\I}{\mathds{1}}
+\usepackage{mathpazo}
+
+% Example environments ---------------------------------------------------------
+\RequirePackage{fancyvrb}
+\RequirePackage{alltt}
+
+\DefineVerbatimEnvironment{example}{Verbatim}{fontsize=\scriptsize}
+\renewenvironment{example*}{\begin{alltt}}{\end{alltt}}
+
+% Support for output from Sweave, and generic session style code
+% These used to have fontshape=sl for Sinput/Scode/Sin, but pslatex
+% won't use a condensed font in that case.
+
+% Update (2015-05-28 by DS): remove fontsize=\small to match example environment
+
+\DefineVerbatimEnvironment{Sinput}{Verbatim}{}
+\DefineVerbatimEnvironment{Soutput}{Verbatim}{}
+\DefineVerbatimEnvironment{Scode}{Verbatim}{}
+\DefineVerbatimEnvironment{Sin}{Verbatim}{}
+\DefineVerbatimEnvironment{Sout}{Verbatim}{}
+\newenvironment{Schunk}{}{}
+
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+%% aqui comentado
+
+%\providecommand{\tabularnewline}{\\}
+%\floatstyle{ruled}
+%\newfloat{algorithm}{tbp}{loa}[chapter]
+%\providecommand{\algorithmname}{Algoritmo}
+%\floatname{algorithm}{\protect\algorithmname}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+%\theoremstyle{plain}
+%\newtheorem{thm}{\protect\theoremname}
+%\theoremstyle{definition}
+%\newtheorem{defn}[thm]{\protect\definitionname}
+
+\@ifundefined{showcaptionsetup}{}{%
+ \PassOptionsToPackage{caption=false}{subfig}}
+\usepackage{subfig}
+\makeatother
+
+
+\usepackage{listings}
+\providecommand{\definitionname}{Definición}
+\providecommand{\theoremname}{Teorema}
+\renewcommand{\lstlistingname}{Listado de código}
+
+
+
+
+\makeatletter
+\renewcommand{\ALG@name}{Algoritmo}
+\makeatother
+
+\begin{document}
+% lo dejo como cuadro o tabla?
+%\renewcommand{\listtablename}{Índice de tablas}
+%\renewcommand{\tablename}{Tabla}
+
+\sloppy % ajusta texto a los márgenes
+\include{Portada}
+
+\include{Comision}
+
+\include{ProfesorGuia}
+
+\include{ProfesorInformante}
+
+\include{Agradecimientos}
+
+\pagebreak{}
+
+\pagenumbering{roman}
+
+\tableofcontents{}
+
+\pagebreak{}
+
+\listoffigures
+
+\pagebreak{}
+
+\listoftables
+
+\pagebreak{}
+
+%\renewcommand{\listalgorithmname}{Índice de algoritmos}
+%\listofalgorithms
+%\addcontentsline{toc}{chapter}{Índice de algoritmos}
+%\pagebreak{}
+
+\thispagestyle{plain} % don't show page number
+\clearpage 
+
+\include{resumen}
+
+\pagebreak{}
+
+\thispagestyle{plain} % don't show page number
+\clearpage 
+\include{abstract}
+\addto{\captionsspanish}{\renewcommand{\abstractname}{Executive Summary}}
+
+\pagebreak{}
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\include{cap1}
+\include{cap2}
+\include{cap3}
+\include{cap4}
+
+\include{conclusion}
+
+\include{bibliografia}
+%\bibliographystyle{plainnat}
+%\bibliography{referencias.bib}
+
+
+%\include{anexos}
+\end{document}

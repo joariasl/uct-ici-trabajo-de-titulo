@@ -1,0 +1,71 @@
+%% LyX 2.3.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[12pt,oneside,spanish,oldfontcommands]{memoir}
+%\usepackage[authoryear]{natbib}
+\usepackage[backend=biber,style=apa]{biblatex}
+\addbibresource{referencias.bib}
+\DeclareLanguageMapping{spanish}{spanish-apa}
+\usepackage{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\setlength{\parskip}{\medskipamount}
+\setlength{\parindent}{0pt}
+\usepackage{babel}
+\usepackage{blindtext}
+\usepackage{tabu}
+\usepackage{booktabs}% for better rules in the table
+\usepackage{float}
+ 
+\usepackage{endnotes}
+\addto\shorthandsspanish{\spanishdeactivate{~<>.}}
+
+\usepackage{array}
+\usepackage{rotfloat}
+\usepackage{booktabs}
+\usepackage{textcomp}
+\usepackage{amssymb,amsmath}
+\usepackage[fixamsmath]{mathtools}
+  \mathtoolsset{showmanualtags,mathic,centercolon}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{esint}
+\usepackage{csquotes}
+
+
+%%% agregados aaparte 
+
+\usepackage{dsfont}
+\usepackage{algorithm}
+\usepackage{multirow}
+\usepackage{algorithmic}
+\newcommand{\Tau}{\mathrm{T}}
+\newcommand{\I}{\mathds{1}}
+
+
+\makeatletter
+
+\begin{document}
+\begin{algorithm}[]
+\caption{kernel}\label{algorithm:kernel}
+ \renewcommand{\algorithmicrequire}{\textbf{Entrada: }}
+ \renewcommand{\algorithmicensure}{\textbf{Salida: }}
+ \algorithmicrequire $\mathbf{e}_{t}$, $\varepsilon$, $\mathbf{D}$, $\mathbf{v}$.\\
+ \algorithmicensure $\mathbf{e}_{t+1}$, $Z_{t+1}$.
+\begin{algorithmic}[1]
+    \STATE \textit{Copia $\mathbf{e}_t$,  $\varepsilon$, $\mathbf{D}$ y $\mathbf{v}$ de la memoria global a la memoria compartida del bloque};
+    \STATE $i^{\prime\prime}\gets i_{blockIdx}^\prime$;
+    \STATE $j^{\prime\prime}\gets j_{threadIdx}^\prime$;
+    \STATE $\mathbf{e}_{threadIdx}^\prime\gets\textit{Asigna el estudiante } i^{\prime\prime} \textit{ a la escuela } j^{\prime\prime}$;
+    \STATE \textit{Calcula } $\varXi_{t+1,threadIdx}$, $D_{t+1,threadIdx}$, $C_{t+1,threadIdx}$ \textit{ con } $\mathbf{e}^\prime_{threadIdx}$;
+    \STATE $Z_{blockIdx,threadIdx,t+1} \gets \gamma_1 \cdot \varXi_{t+1,threadIdx} + \gamma_2 \cdot D_{t+1,threadIdx} + \gamma_3 \cdot C_{t+1,threadIdx}$
+    \STATE \_\_syncthreads();
+    \STATE $Z_{blockIdx,t+1}\gets$\textit{Reducción paralela a nivel de hilos entre los } $Z_{blockIdx,threadIdx,t+1}$;
+    \STATE \_\_syncthreads();
+    \STATE $Z_{t+1}\gets$\textit{Reducción paralela a nivel de bloques entre los  } $Z_{iblockIdx,t+1}$;
+    \RETURN $\mathbf{e}_{t+1}$, $Z_{t+1}$
+\end{algorithmic}
+\end{algorithm}
+
+\end{document}

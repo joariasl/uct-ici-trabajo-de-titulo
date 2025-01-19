@@ -1,0 +1,7 @@
+\chapter{Conclusiones}
+
+Conclusiones del trabajo. Recordar que tener relación con los objetivos propuestos. A veces se incluyen al final trabajos futuros que podrían mejorar lo realizado. Por ejemplo:
+
+En este trabajo se realiza una implementación paralelizada mediante CUDA del algoritmo de recocido simulado para la asignación de estudiantes a escuelas. Los mejores resultados se obtienen con un número alto de bloques y bajo de hilos. A medida que el número de hilos crece, el algoritmo consigue peores soluciones, lo que implica que se encuentra con mínimos locales. También podemos observar que con más hilos la estrategia de usar menos bloques puede ser acertada. No obstante, las diferencias entre los peores y los mejores resultados es relativamente baja en términos absolutos. El tiempo de ejecución del algoritmo empeora tanto con el número de bloques como con el número de hilos. Finalmente, podemos ver que el algoritmo alcanza excelentes resultados a nivel de segregación para el caso estudiado, llevándolo de un nivel alto según el índice de disimilitud, a casi hacerla desaparecer. Esto se logra, incluso, reduciendo la distancia promedio recorrida por los estudiantes y eliminando 4 de 85 escuelas considerados como innecesarios, dado el sobrecupo inicialmente definido.
+
+Como trabajo futuro se pretende probar diferentes estrategias de exploración de soluciones y configuraciones del algoritmo para intentar lograr mejores resultados con la utilización más exigente de la GPU, es decir, más bloques y más hilos simultáneamente.
