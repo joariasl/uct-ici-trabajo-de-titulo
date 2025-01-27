@@ -22,19 +22,28 @@ La obligación de cumplir con la emisión de DTE, junto con la evidencia de la b
 
 Los constantes avances tecnológicos continúan siendo una parte crucial en la optimización de los costos operativos para las empresas. Estas han ido evolucionando, haciendo cada vez más necesaria una mayor integración entre sistemas de la misma o diferentes entidades. Actualmente, la incorporación de análisis de datos avanzados y la inteligencia artificial se han ido adoptando en búsqueda de optimizar la toma de decisiones, aumentar la precisión y eficiencia, y avanzar hacia la automatización y autonomía en la gestión y operación de las empresas.
 
-\section{Estado del Arte}
-Estado del arte. Debe mostrar tanto los trabajos que dieron inicio a la línea de investigación (aunque deben ser pocos) como los trabajos más recientes sobre los que se quiere avanzar o al menos apoyar. Deben citarse usando el estilo de cita seleccionado. El estilo de cita debe ser homogéneo a los largo del trabajo de título. Cada uno de los trabajo citados debe ser acompañado de una breve explicación sobre sus objetivos, métodología y conclusiones. Dependiendo del estilo de escritura requerido por el profesor guía, se deberá explicar cuá es la mejora del trabajo de título sobre cada uno de los trabajos citados en el estado del arte.
+\section{Antecedentes}
 
-Por ejemplo: Desde sus inicios, la teoría de los efectos olvidados ha sido aplicada en problemas de gestión. Como por ejemplo, en el ámbito político \parencite[105-126]{kaufmann1988modelos} o incluso el ámbito financiero \parencite[127-151]{kaufmann1988modelos}. 
+En el mercado de software empresarial actual, existe una gran cantidad de programas que permiten mejorar la gestión empresarial tanto en la parte administrativa como en el proceso. Existen sistemas gratuitos como Odoo (ex OpenERP) que permiten gestionar la información de una empresa, están calificados como sistemas  de clase mundial, pero que por lo mismo no están concretamente diseñados para adaptarse a la normativa comercial y tributaria chilena y no adoptan de manera nativa la actual integración de documentación tributaria electrónica que exige el Servicio de Impuestos Internos.
 
-Actualmente diversos autores han usado la teoría de los efectos olvidados en áreas como por ejemplo, la educación. \textcite{cabrera2020analysis} realizaron un análisis del aprendizaje basado en problemas de rendimiento académico. Se evidenció que los factores de causa-efecto como la gestión muy teórica, o sus contenidos, no contribuyen a mejorar el perfil de graduación de los estudiantes y que tampoco ofrecen soluciones reales a la sociedad. No obstante, este trabajo no ofrece escenarios más allá del evaluado por los informantes clave, aspecto que incorporamos en nuestro desarrollo informático.  \\
+También existen sistemas de pago ofrecidos por empresas como SAP, Oracle, QAD, Softland, Microsoft, entre otros; pero que no logran llegar a las MiPyME (Pequeñas Medianas y Microempresas) debido a su alto costo de mercado, plataforma y mantención. Y para algunas de las grandes empresas, estas no permiten realizar una integración adecuada a sistemas informáticos propios o no les permite adoptar rápidamente los cambios necesarios cuando el Servicio de Impuestos Internos aplica nuevos requisitos a la regulación.
+
+Para facilitar la adopción a las PyME y Microempresas el Servicio de Impuestos Internos ha puesto a disposición de los contribuyentes un sistema de facturación gratuito de funcionalidad básica, que les permite operar con facturas electrónicas y cumplir con la normativa que el SII ha establecido para los contribuyentes autorizados a emitir documentos tributarios electrónicos, pero que no permite integrar funcionalidades acordes a las necesidades de cada empresa y compatibles con sus propios sistemas.
+
+Como solución para la implementación en el desarrollo de software propio, existió una librería DTE para Java creada por NicLabs en el año 2011. Actualmente se encuentra deprecada desde Enero del 2017 y ya no recibe actualizaciones para la solución de incidencias, pero aparentemente funcional aún corrigiendo algunas definiciones deprecadas u otras incidencias, pero sin ninguna garantía.
+
+Empresas como Acepta.com S.A. y SOVOS ofrecen soluciones de facturación electrónica de pago en forma de Web Service, enfocada principalmente en el segmento de mercado de las medianas y grandes empresas. Aunque, según la evidencia de adopción de software de mercado, el Software de Facturación gratuito ofrecido por el SII continúa siendo la solución predominante para complir con la obligación, a pesar de sus limitaciones.
 
 \section{Objetivos}
+
 \subsection{Objetivo general}
+
 \begin{itemize} 
     \item Desarrollar un recurso para la implementación de Documentación Tributaria Electrónica que cumpla con los estándares exigidos por el Servicio de Impuestos Internos y permita a las empresas dar cumplimiento a su obligación de adopción según las normas y requisitos establecidos, además de gestionar y resguardar eficazmente dicha documentación tributaria e información asociada, escalable al uso e implementación tanto en grandes empresas como en PyME y Microempresas.
 \end{itemize}
+
 \subsection{Objetivos específicos}
+
 \begin{itemize}
 	\item Analizar los sistemas y recursos informáticos actuales que emplean las empresas para gestionar documentos fiscales y determinar cómo los implementan.
 	\item Estudiar las necesidades y estado actual de las empresas en cuanto a la normativa vigente para cumplir con la documentación electrónica.
