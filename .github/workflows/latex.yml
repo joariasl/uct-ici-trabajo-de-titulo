@@ -15,7 +15,8 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: Build
-      run: docker run --rm -t --user="$(id -u):$(id -g)" --net=none -v "$(pwd):/tmp" leplusorg/latex pdflatex -synctex=1 -interaction=nonstopmode -output-directory=/tmp -pdf /tmp/main.tex
+      run: |
+        docker run --rm -t --user="$(id -u):$(id -g)" --net=none -v "$(pwd):/tmp" jariasl/latex latexmk -synctex=1 -interaction=nonstopmode -output-directory=/tmp -pdf /tmp/main.tex
 
     - name: Archive PDF
       uses: actions/upload-artifact@v4
