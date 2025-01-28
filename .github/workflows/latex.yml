@@ -15,10 +15,7 @@ jobs:
 
     - name: Build
       run: |
-        docker run --rm -t --user="$(id -u):$(id -g)" --net=none -v "$(pwd):/tmp" leplusorg/latex pdflatex -synctex=1 -interaction=nonstopmode -output-directory=/tmp -pdf /tmp/main.tex
-        docker run --rm -t --user="$(id -u):$(id -g)" --net=none -v "$(pwd):/tmp" --workdir "/tmp" leplusorg/latex biber main
-        docker run --rm -t --user="$(id -u):$(id -g)" --net=none -v "$(pwd):/tmp" leplusorg/latex pdflatex -synctex=1 -interaction=nonstopmode -output-directory=/tmp -pdf /tmp/main.tex
-        docker run --rm -t --user="$(id -u):$(id -g)" --net=none -v "$(pwd):/tmp" leplusorg/latex pdflatex -synctex=1 -interaction=nonstopmode -output-directory=/tmp -pdf /tmp/main.tex
+        docker run --rm -t --user="$(id -u):$(id -g)" --net=none -v "$(pwd):/tmp" leplusorg/latex latexmk -synctex=1 -interaction=nonstopmode -pdf /tmp/main.tex
 
     - name: Archive PDF
       uses: actions/upload-artifact@v4
