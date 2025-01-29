@@ -26,7 +26,7 @@ jobs:
       with:
         name: PDF
         path: ./output
-        run_id: ${{ github.event.workflow_run.id }}
+        run-id: ${{ github.event.workflow_run.id }}
 
     - name: Publish GitHub Release
       run: |
