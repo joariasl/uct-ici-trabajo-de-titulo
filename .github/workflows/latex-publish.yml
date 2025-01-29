@@ -5,6 +5,8 @@ on:
     workflows: ["Latex Build"]
     types:
       - completed
+    branches:
+      - main
 
 jobs:
   release:
@@ -25,7 +27,8 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: PDF
-        path: ./output
+        path: |
+          main.pdf
         run-id: ${{ github.event.workflow_run.id }}
 
     - name: Publish GitHub Release
