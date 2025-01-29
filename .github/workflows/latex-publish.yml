@@ -34,6 +34,6 @@ jobs:
 
     - name: Publish GitHub Release
       run: |
-        gh release create "$(date +%Y%m%d%H%M)" ./output/main.pdf --title "Release $(date +%Y-%m-%d)" --notes "Auto-generated PDF from main branch"
+        gh release create "$(date +%Y%m%d%H%M)" ./main.pdf --title "Release $(date +%Y-%m-%d)" --notes "Auto-generated PDF from main branch"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
