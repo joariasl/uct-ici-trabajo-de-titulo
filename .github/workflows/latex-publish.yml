@@ -30,6 +30,7 @@ jobs:
         path: |
           main.pdf
         run-id: ${{ github.event.workflow_run.id }}
+        github-token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Publish GitHub Release
       run: |
