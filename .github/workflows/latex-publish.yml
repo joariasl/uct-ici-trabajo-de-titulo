@@ -27,8 +27,7 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: PDF
-        path: |
-          main.pdf
+        path: output
         run-id: ${{ github.event.workflow_run.id }}
         github-token: ${{ secrets.GITHUB_TOKEN }}
 
