@@ -6,7 +6,7 @@
 
 La solución está compuesta por dos bibliotecas Java principales: \texttt{sii-dte-lib-java} y \texttt{sii-schemas-lib-java}.
 
-El Cuadro \ref{tab:componentesSolucion} presenta una descripción detallada de cada uno de los componentes.
+El Cuadro~\ref{tab:componentesSolucion} presenta una descripción detallada de cada uno de los componentes.
 
 \begin{table}
     \centering
@@ -28,7 +28,7 @@ El Cuadro \ref{tab:componentesSolucion} presenta una descripción detallada de c
 
 \subsection{Modelo de dependencias para Biblioteca}
 
-La Figura \ref{figure:dependenciasComponentes} detalla la relación de dependencias entre los componentes de la solución. \texttt{Proyecto Java} representa cualquier implementación de las bibliotecas, ya sea como un cliente, servicio API o microservicio.
+La Figura~\ref{figure:dependenciasComponentes} detalla la relación de dependencias entre los componentes de la solución. \texttt{Proyecto Java} representa cualquier implementación de las bibliotecas, ya sea como un cliente, servicio API o microservicio.
 
 \begin{figure}[H]
     \centering
@@ -46,5 +46,29 @@ La Figura \ref{figure:dependenciasComponentes} detalla la relación de dependenc
 \section{Patrones de Diseño}
 
 \section{Herramientas utilizadas}
+
+\subsection{Recursos para Java}
+
+El Cuadro~\ref{tab:recursosJava} detalla los recursos utilizados para el desarrollo de las bibliotecas Java que dan soporte a los esquemas proporcionados por el SII.
+
+\begin{table}
+    \centering
+    \caption{Recursos para Java}
+    \begin{tabularx}{\linewidth}{|p{0.3\linewidth}|X|}
+        \hline
+        \textbf{Recurso} &
+        \textbf{Descripción}\\
+        \hline
+        JAXB & Jakarta XML Binding ofrece a los desarrolladores de Java una forma eficiente y estándar de mapear XML a código Java. \textcite{jaxbri} \\
+        \hline
+        Jakarta EE & Framework Open Source para el desarrollo de Cloud Native Java Applications. Define un conjunto de especificaciones para el desarrollo de aplicaciones empresariales. Es la evolución de Java EE (Java Platform, Enterprise Edition) después de que Oracle transfiriera el proyecto a la Eclipse Foundation en Septiembre 12 de 2017. \textcite{jakartaee} \\
+        \hline
+        Jakarta XML Binding & Jakarta XML Binding define una API y herramientas que automatizan el mapeo entre documentos XML y objetos Java. \\
+        \hline
+        Jakarta Annotations & Jakarta Annotations define una colección de anotaciones que representan conceptos semánticos comunes que permiten un estilo declarativo de programación que se aplica a una variedad de tecnologías Java. \\
+        \hline
+    \end{tabularx}
+    \label{tab:recursosJava}
+\end{table}
 
 \section{Licenciamiento}
