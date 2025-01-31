@@ -2,6 +2,49 @@
 
 \section{Arquitectura y Componentes del Sistema}
 
+\subsection{Componentes}
+
+La solución está compuesta por dos bibliotecas Java principales: \texttt{sii-dte-lib-java} y \texttt{sii-schemas-lib-java}.
+
+El Cuadro \ref{tab:componentesSolucion} presenta una descripción detallada de cada uno de los componentes.
+
+\begin{table}
+    \centering
+    \caption{Componentes de la solución}
+    \begin{tabularx}{\linewidth}{|p{0.3\linewidth}|X|}
+        \hline
+        \textbf{Componente} &
+        \textbf{Descripción}\\
+        \hline
+        sii-schemas-lib-java & Biblioteca con modelos Java generados desde shemas de Formato XML de Documentos Electrónicos distribuidos por el SII Chile \\
+        \hline
+        sii-dte-lib-java & Biblioteca Java cliente para el manejo y envío de Documentos Electrónicos del SII Chile \\
+        \hline
+        Proyecto Java & Proyecto Java encargado de realizar procesos de negocio para el manejo de los DTE de una o varias empresas \\
+        \hline
+    \end{tabularx}
+    \label{tab:componentesSolucion}
+\end{table}
+
+\subsection{Modelo de dependencias para Biblioteca}
+
+La Figura \ref{figure:dependenciasComponentes} detalla la relación de dependencias entre los componentes de la solución. \texttt{Proyecto Java} representa cualquier implementación de las bibliotecas, ya sea como un cliente, servicio API o microservicio.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \graph [nodes={draw}] {
+            Proyecto Java,
+            Proyecto Java -> "sii-dte-lib-java",
+            "sii-dte-lib-java" -> "sii-schemas-lib-java";
+        };
+    \end{tikzpicture}
+    \caption{Dependencia entre componentes.}
+    \label{figure:dependenciasComponentes}
+\end{figure}
+
+\section{Patrones de Diseño}
+
 \section{Herramientas utilizadas}
 
 \section{Licenciamiento}
